@@ -1,0 +1,8 @@
+// FORMA CONECTARSE A UNA DB
+use("sample_training")
+
+//CONSULTAR UNA COLLECION
+db.zips.find({ state: 'NY' })
+
+//SABER CUANTAS COLLECIONES HAY
+db.zips.find({ state: 'NY' }).count()
