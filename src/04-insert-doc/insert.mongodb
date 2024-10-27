@@ -1,0 +1,27 @@
+// ENTRANDO A BD
+use('store')
+
+// CUANDO SE EJECUTA VARIAS LINEAS SIEMPRE EN EL PLAYGFROUND APARECE EL ULTIMO
+// SE DEFINE SOLO EL ID POR APRTE DE MONGO SI NO SE LE PASA
+db.products.insertOne({
+    name: "Product 1",
+    price: 120000
+})
+
+db.products.insertOne({
+    name: "Product 2",
+    price: 110000
+})
+
+// PASANDO ID POR PARTE DEL PROGRAMADOR
+db.products.insertOne({
+    _id: 3,
+    name: "Product 3",
+    price: 120000
+})
+
+db.products.insertOne({
+    _id: 4,
+    name: "Product 4",
+    price: 110000
+})
