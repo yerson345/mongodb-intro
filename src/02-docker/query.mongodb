@@ -1,0 +1,5 @@
+// FORMA CONECTARSE A UNA DB
+use("store")
+
+//CONSULTAR UNA COLLECION
+db.products.find()

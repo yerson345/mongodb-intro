@@ -1,0 +1,19 @@
+# VERSION DE DOCKER
+version: '3.9'
+
+services:
+  mongodb:
+    # VERSION A MANEJAR EN MONGO
+    image: mongo:5.0
+    #PUERTOS A USAR EN DOCKER Y MONGO
+    ports:
+      - 27017:27017
+    #USUARIOS PARA PODER CONECTAR DOCKER CON MONGO
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root123
+    #CONTENEDOR ESTADO
+    volumes:
+      - ./mongo_data:/data/db
+volumes:
+  mongodata:
