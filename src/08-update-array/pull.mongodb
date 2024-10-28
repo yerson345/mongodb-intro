@@ -1,0 +1,25 @@
+use("store")
+
+// QUITA UN ELEMETNO DE UN ARRAY EN TODOS LOS QUE ENCUENTRE
+db.inventory.updateMany({}, {
+    $pull: {
+        tags: "book"
+    }
+})
+
+
+// QUITA UN ELEMETNO DE UN ARRAY EN UNO ESPECIFICO CON ID
+db.inventory.updateMany({ _id: 4 }, {
+    $pull: {
+        tags: "book"
+    }
+})
+
+// QUITA VARIOS ELEMENTOS DE ARRAY
+db.inventory.updateMany({ _id: 4 }, {
+    $pull: {
+        tags: {
+            $in: ["appliance", "school"]
+        }
+    }
+})

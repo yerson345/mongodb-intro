@@ -1,0 +1,14 @@
+use("sample_training")
+
+//SE USA CUANDO QUEDA MAL EL NOMBRE DEL ATRIBUTO
+db.zips.updateMany(
+    //QUERY
+    { city: "CLEVELAND" },
+
+    // UPDATE => OPERATORS
+    { 
+        $rename: {
+            myAttr: "my_data"
+        }
+     }
+)

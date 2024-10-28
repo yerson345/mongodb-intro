@@ -1,0 +1,17 @@
+use("store")
+
+// AGREGAR ELEMENTO AL FINAL DE UN ARRAY
+db.inventory.updateOne({ _id: 4 }, {
+    $push: {
+        tags: "headphone"
+    }
+})
+
+// INSERTAR VARIOS ELEMENTOS
+db.inventory.updateOne({ _id: 4 }, {
+    $push: {
+        tags: {
+            $each: ["headphone", "wireless"]
+        }
+    }
+})

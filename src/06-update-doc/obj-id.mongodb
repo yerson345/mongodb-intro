@@ -1,0 +1,13 @@
+use("store")
+
+db.products.updateOne(
+    // QUERY
+    { _id: ObjectId("671e8b80e10a979d1b33dd14") },
+    // CAMBIAR LO QUE QUEREMOS => OPERATORS
+    {
+        $inc: {
+            price: 500 //140000 -> 140500
+        }
+    }
+)
+

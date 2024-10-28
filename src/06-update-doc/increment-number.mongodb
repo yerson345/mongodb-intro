@@ -1,0 +1,12 @@
+use("store")
+
+db.products.updateOne(
+    // QUERY
+    { _id: 2 },
+    // CAMBIAR LO QUE QUEREMOS => OPERATORS
+    {
+        $inc: {
+            price: 500 //115000 -> 115500
+        }
+    }
+)

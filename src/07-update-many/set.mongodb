@@ -1,0 +1,14 @@
+use("sample_training")
+
+
+db.zips.updateMany(
+    //QUERY
+    { city: "CLEVELAND" },
+
+    // UPDATE => OPERATORS
+    { 
+        $set: {
+            myAttr: "hola"
+        }
+     }
+)

@@ -1,0 +1,14 @@
+use("sample_training")
+
+//ELIMINAR UN ATRIBUTO
+db.zips.updateMany(
+    //QUERY
+    { city: "CLEVELAND" },
+
+    // UPDATE => OPERATORS
+    { 
+        $unset: {
+            myAttr: ""
+        }
+     }
+)

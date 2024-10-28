@@ -1,0 +1,32 @@
+use("store")
+
+// TOMA LA COLLECION Y LA BORRA PARA DEJARLA VACIA
+db.products.drop()
+
+// INSERTAR VARIOS DOCUMENTOS (SI SE INSERTA CON ID PROPIO POR PROGRAMADOR Y ESATA REPETIDO EL ID REPETIDO NO VA SER AGREGADO, POR OOTRO LADO SI HAY ID NO REPETIDOS DEL QUE ESTA REPETIDO NO LOS CREA)
+db.products.insertMany([
+    {
+        _id: 1,
+        name: "Product 1",
+        price: 100000
+    },
+    {
+        _id: 2,
+        name: "Product 2",
+        price: 110000
+    },
+    {
+        _id: 3,
+        name: "Product 3",
+        price: 120000
+    },
+    {
+        _id: 4,
+        name: "Product 4",
+        price: 130000
+    }
+], {
+    ordered: false //SIRVE PARA LOS ID ESTEN REPETIDOS Y ABAJO NO HAYAN LOS CREE LOS DE ABAJO
+})
+
+db.products.find()
