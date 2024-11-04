@@ -1,0 +1,22 @@
+use("store")
+
+// db.inventory.find({ "item.description": "Single line description." })
+
+
+// Para buscar una palabra
+db.inventory.find({ "item.description": { $regex: /line/ } })
+
+// Con i que no importe Mayusculas y Minusculas
+db.inventory.find({ "item.description": { $regex: /LINE/i } })
+
+
+// Con $ es para cuando alguno termine en line en una oracion
+db.inventory.find({ "item.description": { $regex: /line$/i } })
+
+
+// Con ^ es para buscar la plabra single inicie de una oracion
+db.inventory.find({ "item.description": { $regex: /^single/i } })
+
+
+// Con ^ es para buscar la plabra s que inicie en una oracion y que tenga espacio im
+db.inventory.find({ "item.description": { $regex: /^s/im } })

@@ -17,13 +17,3 @@ db.inventory.find({ "item.name": "ab" })
 //USANDO $NE
 // usando no equal, este se usa de forma explícita
 db.inventory.find({qty: {$ne: 20}})
-
-
-db.inventory.updateMany(
-    {qty: {$ne: 20}},
-    {
-        $inc: {
-            qty: 10
-        }
-    }
-)

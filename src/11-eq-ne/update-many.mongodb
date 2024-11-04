@@ -1,0 +1,12 @@
+use("store")
+
+db.inventory.updateMany(
+    // QUERY - OPERATORS
+    {qty: {$ne: 20}},
+    // QUERY - inc
+    {
+        $inc: {
+            qty: 10
+        }
+    }
+)
