@@ -1,0 +1,28 @@
+use("sample_training")
+
+
+// db.trips.findOne({
+//     "start station location.type": "Point"
+// })
+
+
+
+// db.companies.find({
+//     "relationships.0.person.last_name": "Zuckerberg"
+// }, {
+//     name: 1,
+//     relationships: 1
+// })
+
+
+
+db.companies.find({
+    relationships: {
+        $elemMatch: {
+            "person.first_name": "Mark"
+        }
+    }
+}, {
+    name: 1,
+    relationships: 1
+})
